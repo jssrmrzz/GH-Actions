@@ -1,20 +1,27 @@
-name: GHActions
+#name of action/workflow
+name: GHActions 
 
+#used 'on' keyword to specify trigger 'push' to kick off workflow
 on: push
 
+#lists jobs that workflow will run
 jobs:
   
   macos:
+    #insures latest macOS
     runs-on: macos-latest
     steps:
     - run: date
   
   windows:
+    #insures latest windows OS
     runs-on: windows-latest
     steps:
     - run: date
   
   dependency:
+    #by default all jobs run in parallel
+    #dependency for macos and windows job to complete before starting dependency job
     needs: [macos, windows]
     runs-on: macos-latest
     steps:
