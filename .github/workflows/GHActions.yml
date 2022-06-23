@@ -1,0 +1,22 @@
+name: GHActions
+
+on: push
+
+jobs:
+  macos:
+    run-on: macos-latest
+    steps:
+    - run: date
+  windows:
+    run-on: windows-latest
+    steps:
+    - run: date
+  ubuntu:
+    run-on: ubuntu-latest
+    steps:
+    -run: date
+  dependency:
+    needs: [macos, windows, ubuntu]
+    run-on: macos-latest
+    steps:
+    - run: date
