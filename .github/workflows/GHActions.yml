@@ -3,20 +3,19 @@ name: GHActions
 on: push
 
 jobs:
+  
   macos:
     runs-on: macos-latest
     steps:
     - run: date
+  
   windows:
     runs-on: windows-latest
     steps:
     - run: date
-  ubuntu:
-    run-ons: ubuntu-latest
-    steps:
-    -run: date
+  
   dependency:
-    needs: [macos, windows, ubuntu]
+    needs: [macos, windows]
     runs-on: macos-latest
     steps:
     - run: date
