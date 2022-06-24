@@ -1,0 +1,12 @@
+name: Python syntax checker app
+
+on: [push]
+
+jobs:
+  build:
+    
+    runs-on: macos-latest
+    
+    steps:
+    -name: Check code
+    uses: actions/checkout@v2
