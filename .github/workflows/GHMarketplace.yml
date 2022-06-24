@@ -5,7 +5,8 @@ on: [push]
 jobs:
   build:
     
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
+    # Tried on macOS but received an error saying the action only compatible with linux
     
     steps:
     - name: Check code
